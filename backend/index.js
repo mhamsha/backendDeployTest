@@ -38,10 +38,10 @@ const githubData = {
     "created_at": "2023-09-25T02:04:14Z",
     "updated_at": "2024-10-29T12:14:46Z"
 }
-
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+app.use(express.static("dist"));
+// app.get("/", (req, res) => {
+//   res.send("Hello World!");
+// });
 app.get("/login",(req, res)=>{
     res.send("You are currently not login!")
 })
