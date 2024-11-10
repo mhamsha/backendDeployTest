@@ -26,10 +26,10 @@ const githubData = {
     "name": "Hamza Shahzad",
     "company": null,
     "blog": "",
-    "location": null,
+    "location": "Pakistan",
     "email": null,
     "hireable": null,
-    "bio": null,
+    "bio": "a frontend developer",
     "twitter_username": null,
     "public_repos": 11,
     "public_gists": 0,
@@ -48,7 +48,7 @@ app.get("/login",(req, res)=>{
 app.get("/check",(req, res)=>{
     res.send("<h1>Welcome to my website!</h1>")
 })
-app.get("/github", (req, res)=>{
+app.get("/api/github", (req, res)=>{
     res.json(githubData)
 })
 app.get("/feature",(req, res)=>{
