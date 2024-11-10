@@ -51,7 +51,9 @@ app.get("/check",(req, res)=>{
 app.get("/github", (req, res)=>{
     res.json(githubData)
 })
-
+app.get("/feature",(req, res)=>{
+    res.send("New feature has arrived!")
+})
 app.listen(process.env.PORT, () => {
   console.log(`Example app listening at http://localhost:${process.env.PORT}`);
 });
