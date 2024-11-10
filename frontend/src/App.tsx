@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
 
 function App() {
+  console.log("rendered")
   interface GithubData {
     avatar_url: string;
     name: string;
@@ -11,14 +12,16 @@ function App() {
   }
   const [githubData, setGithubData] = useState<GithubData | null>(null);
 
-  axios
-    .get("/api/github")
-    .then((response) => {
-      setGithubData(response.data);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+  useEffect(() => {
+    axios
+      .get("/api/github")
+      .then((response) => {
+        setGithubData(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   return (
     <div>
